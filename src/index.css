@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary: 207 89% 52%;
+    --primary-light: 207 89% 62%;
+    --primary-dark: 207 89% 42%;
+    --success: 134 61% 41%;
+    --warning: 28 92% 53%;
+    --danger: 354 70% 54%;
+    --text-primary: 220 13% 13%;
+    --text-secondary: 220 13% 33%;
+    --text-muted: 220 13% 53%;
+    --background: 0 0% 100%;
+    --background-alt: 210 33% 98%;
+    --border: 220 13% 91%;
+  }
+
+  html {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  body {
+    @apply bg-background-alt text-text-primary antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-medium tracking-tight;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-primary-dark;
+  }
+
+  .btn-outline {
+    @apply border border-border bg-background hover:bg-background-alt;
+  }
+
+  .card {
+    @apply rounded-lg bg-background p-6 shadow-sm;
+  }
+
+  .form-input {
+    @apply w-full rounded-md border border-border bg-background px-3 py-2 text-sm placeholder:text-text-muted focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary;
+  }
+
+  .form-select {
+    @apply w-full rounded-md border border-border bg-background px-3 py-2 text-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary;
+  }
+
+  .status-active {
+    @apply rounded-full bg-green-100 px-2.5 py-0.5 text-xs font-medium text-green-800;
+  }
+
+  .status-inactive {
+    @apply rounded-full bg-red-100 px-2.5 py-0.5 text-xs font-medium text-red-800;
+  }
+
+  .status-paid {
+    @apply rounded-full bg-green-100 px-2.5 py-0.5 text-xs font-medium text-green-800;
+  }
+
+  .status-pending {
+    @apply rounded-full bg-orange-100 px-2.5 py-0.5 text-xs font-medium text-orange-800;
+  }
+
+  .nav-link {
+    @apply flex items-center gap-2 rounded-md px-3 py-2 text-text-secondary hover:bg-primary/10 hover:text-primary;
+  }
+
+  .nav-link.active {
+    @apply bg-primary/10 text-primary;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
